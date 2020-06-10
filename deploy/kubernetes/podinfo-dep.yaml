@@ -1,17 +1,24 @@
 ---
-apiVersion: apps/v1beta1 # for versions before 1.6.0 use extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: podinfo
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: podinfo
   template:
     metadata:
       labels:
         app: podinfo
     spec:
       containers:
-      - name: podinfo
-        image: stefanprodan/podinfo:4.0.3
-        ports:
-        - containerPort: 3000
+        - name: podinfo
+          image: stefanprodan/podinfo:4.0.3
+          ports:
+            - containerPort: 3000
+          resources:
+            limits:
+              memory: 64Mi
+              cpu: 250m
