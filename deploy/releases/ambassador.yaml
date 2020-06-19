@@ -1,0 +1,10 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: ambassador
+spec:
+  releaseName: ambassador
+  chart: 
+    repository: https://www.getambassador.io
+    name: ambassador
+    version: 1.5.3
