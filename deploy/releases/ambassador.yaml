@@ -2,9 +2,16 @@ apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: ambassador
+  annotations:
+  fluxcd.io/automated: "true"
+  filter.fluxcd.io/chart-image: semver:~1.5.3
 spec:
   releaseName: ambassador
   chart: 
     repository: https://www.getambassador.io
     name: ambassador
     version: 1.5.3
+  values:
+    image: datawire/ambassador
+    replicaCount: 1
+
