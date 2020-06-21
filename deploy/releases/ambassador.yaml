@@ -8,7 +8,7 @@ metadata:
 spec:
   releaseName: ambassador
   chart: 
-    repository: https://www.getambassador.io
+    repository: quay.io/datawire/ambassador
     name: ambassador
     version: 1.5.3
   values:
