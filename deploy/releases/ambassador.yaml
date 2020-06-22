@@ -6,12 +6,8 @@ metadata:
   fluxcd.io/automated: "true"
   filter.fluxcd.io/chart-image: semver:~1.5.3
 spec:
-  releaseName: ambassador
   chart: 
-    repository: quay.io/datawire/ambassador
+    repository: https://getambassador.io
     name: ambassador
     version: 1.5.3
-  values:
-    image: datawire/ambassador
-    replicaCount: 1
 
